@@ -8,3 +8,6 @@ L.tileLayer('assets/images/tiles/overworld/{z}/{x}/{y}.jpg', {
 	continuousWorld: false,
 	noWrap: true,
 }).addTo(map);
+
+// disable right click menu
+document.addEventListener('contextmenu', event => event.preventDefault());
