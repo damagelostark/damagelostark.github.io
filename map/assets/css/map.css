@@ -1,0 +1,537 @@
+html,  body,  .map-wrapper,  #map  {
+    min-height:  100% !important;
+    height:  100%;
+    overflow:  hidden;
+    margin:  0 auto;
+    background-color:  #13171a;
+}
+
+.map-wrapper  {
+    position:  absolute !important;
+    width:  100% !important;
+}
+
+.close  {
+    color:  #aaaaaa;
+    float:  right;
+    font-size:  28px;
+    font-weight:  bold;
+}
+
+.close:hover,  .close:focus  {
+    color:  #fff;
+    text-decoration:  none;
+    cursor:  pointer;
+}
+
+#myBtn  {
+    background-color:  #18252e;
+    color:  #d1ab84;
+    font-size:  16px;
+    height:  30px;
+    width:  75%;
+    border:  1px solid #d1ab84;
+}
+
+#myBtn:hover  {
+    background-color:  #13171a;
+}
+
+.map-marker-zone,  .map-marker-island,  .map-marker-normal  {
+    display:  flex;
+    flex-wrap:  wrap;
+    justify-content:  center;
+    vertical-align:  top;
+    text-align:  center;
+}
+
+.map-marker-zone .map-marker-zone-name  {
+    color:  #f3c05e;
+    white-space:  nowrap;
+    pointer-events:  none;
+    font-size:  16px;
+    flex:  0 0 100%;
+    text-shadow:  1px 1px #000;
+}
+
+.map-marker-portal  {
+    display:  flex;
+    flex-wrap:  wrap;
+    justify-content:  center;
+    vertical-align:  top;
+    text-align:  center;
+    width:  fit-content;
+    color:  #6fc6f0;
+    white-space:  nowrap;
+    pointer-events:  none;
+    font-size:  16px;
+    flex:  0 0 100%;
+    text-shadow:  1px 1px #000;
+}
+
+.map-label  {
+    display:  flex;
+    flex-wrap:  wrap;
+    justify-content:  center;
+    vertical-align:  top;
+    text-align:  center;
+    width:  fit-content;
+    color:  #ddcd9a;
+    white-space:  nowrap;
+    pointer-events:  none;
+    font-size:  16px;
+    flex:  0 0 100%;
+    text-shadow:  1px 1px #000;
+}
+
+.default-label  {
+    position:  absolute;
+    width:  auto;
+    font-size: 16px !important;
+    color:  #fff;
+    text-shadow:  1px 0 0 #000,  0 -1px 0 #000,  0 1px 0 #000,  -1px 0 0 #000;
+}
+
+
+.hstory-label  {
+    position:  absolute;
+    width:  auto;
+    font-size: 16px !important;
+    color:  #75b032;
+    text-shadow:  1px 0 0 #000,  0 -1px 0 #000,  0 1px 0 #000,  -1px 0 0 #000;
+}
+
+.astory-label  {
+    position:  absolute;
+    width:  auto;
+    font-size: 16px !important;
+    color:  #c24b71;
+    text-shadow:  1px 0 0 #000,  0 -1px 0 #000,  0 1px 0 #000,  -1px 0 0 #000;
+}
+
+.food-label  {
+    position:  absolute;
+    width:  auto;
+    font-size: 16px !important;
+    color:  #fff;
+    text-shadow:  1px 0 0 #000,  0 -1px 0 #000,  0 1px 0 #000,  -1px 0 0 #000;
+}
+
+.portal-label  {
+    position:  absolute;
+    width:  auto;
+    font-size: 16px !important;
+    color:  #6fc6f0;
+    text-shadow:  1px 0 0 #000,  0 -1px 0 #000,  0 1px 0 #000,  -1px 0 0 #000;
+}
+
+.zone-label  {
+    position:  absolute;
+    width:  auto;
+    font-size: 16px !important;
+    color:  #f3c05e;
+    text-shadow:  -1px 3px 5px #000;
+}
+
+.map-marker-zone div  {
+    color:  #f3c05e;
+    text-shadow:  -1px 3px 5px #000;
+    white-space:  nowrap;
+}
+
+.map-marker-island div  {
+    color:  #fff;
+    text-shadow:  1px 1px #000;
+    white-space:  nowrap;
+}
+
+.map-marker-normal div  {
+    color:  #fff;
+    text-shadow:  1px 1px #000;
+    white-space:  nowrap;
+}
+
+.island-label  {
+    position:  absolute;
+    width:  auto;
+    font-size: 14px !important;
+    color:  #fff;
+    text-shadow:  -1px 3px 5px #000;
+}
+
+.leaflet-tooltip  {
+    position:  absolute;
+    padding:  0px !important;
+    background-color:  transparent !important;
+    border:  none !important;
+    border-radius:  3px;
+    color:  none !important;
+    white-space:  nowrap ;
+    -webkit-user-select:  none;
+    -moz-user-select:  none;
+    -ms-user-select:  none;
+    user-select:  none;
+    pointer-events:  none;
+    box-shadow:  none !important;
+}
+
+.leaflet-tooltip-right:before  {
+    border-right-color:  transparent !important;
+}
+
+.leaflet-tooltip-left:before  {
+    border-left-color:  transparent !important;
+}
+
+.leaflet-tooltip-top:before  {
+    border-top-color:  transparent !important;
+}
+
+.leaflet-tooltip-bottom:before  {
+    border-bottom-color:  transparent !important;
+}
+
+#sidebar  {
+    position: absolute;
+    top: 0;
+    right: -280px;
+    width:  300px;
+    height:  100%;
+    transition: all 300ms linear;
+    z-index:  998;
+    border-left:  1px solid #d1ab84;
+    background-color:  #181c23;
+    border-left:  3px solid #262a33;
+}
+
+#sidebar.active  {
+    right: 0px;
+}
+
+#sidebar.active .toggle-btn  {
+    background-image:  url("../images/controls/fold.png");
+}
+
+#sidebar .toggle-btn  {
+    position: absolute;
+    right: 298px;
+    top: 10px;
+    background-image:  url("../images/controls/fold_open.png");
+    width:  70px;
+    height:  60px;
+    background-size:  contain;
+    background-repeat:  no-repeat;
+    cursor: pointer;
+}
+
+.sidebar-content  {
+    margin-left:  20px;
+    margin-right:  20px;
+    height:  100%;
+}
+
+.region-name-first  {
+    font-size:  25px;
+    color:  #d1ab84;
+    text-align:  center;
+    margin-top:  10px;
+    overflow-wrap:  break-word;
+}
+
+.region-name-second  {
+    font-size:  20px;
+    color:  rgba(255,  255,  255,  0.3);
+    text-align:  center;
+}
+
+.sidebar-item  {
+    height:  30px;
+    border:  none;
+    cursor:  pointer;
+    margin:  2px;
+    background-color:  #161b1e;
+    border:  solid 1px #0d1114;
+    color:  #7f95a0;
+    -webkit-user-select:  none;
+    -moz-user-select:  none;
+    -ms-user-select:  none;
+    user-select:  none;
+}
+.sidebar-item.toggle-active  {
+    background-color:  #18252e;
+    border:  solid 1px #6a8b9c;
+    color:  white;
+}
+
+.sidebar-item.toggle-active:hover  {
+    background-color:  #161b1e;
+    color:  white;
+}
+
+.sidebar-item:hover  {
+    background-color:  #18252e;
+    color:  white;
+}
+
+.sidebar-item-name  {
+    float:  left;
+    font-size:  16px;
+    display:  block;
+    padding-top:  5px;
+}
+
+.sidebar-item-icon  {
+    float:  left;
+    margin-right:  5px;
+    padding-left:  5px;
+    padding-top:  7px;
+}
+
+.sidebar-list  {
+    margin-top:  20px;
+    margin-bottom:  20px;
+    max-height:  300px;
+    background-color:  #18252e;
+    overflow-y:  scroll;
+    height:  auto;
+}
+
+.sidebar-list::-webkit-scrollbar  {
+    display:  none;
+}
+.sidebarExtraButton button  {
+    width:  100%;
+    height:  30px;
+    font-size:  16px;
+    margin-bottom:  20px;
+    background-color:  #18252e;
+    border:  solid 1px #6a8b9c;
+    color:  white;
+}
+
+.sidebarExtraButton button:hover  {
+    background-color:  #161b1e;
+    color:  white;
+}
+
+.leaflet-popup-content-wrapper  {
+    display:  inline-block;
+    position:  absolute;
+    width:  353px;
+    left:  -176.5px;
+    bottom:  0px;
+    border-radius:  14px;
+    background:  #F0E9E2;
+    border:  4px solid transparent;
+    border-color:  rgba(0,  0,  0,  0.3);
+    background-clip:  padding-box;
+    box-shadow:  0px 4px 4px rgba(0,  0,  0,  0);
+    cursor:  default;
+    transform-origin:  50% 100% 0;
+    transform:  scale(0.6);
+    -webkit-transform:  scale(0.6);
+    -moz-transform:  scale(0.6);
+}
+
+.leaflet-popup-content  {
+    display:  inline-block;
+    width:  100% !important;
+    margin:  0;
+    clear:  both;
+}
+
+.myPopContainer  {
+    -webkit-user-select:  none;
+    -moz-user-select:  none;
+    -ms-user-select:  none;
+    user-select:  none;
+}
+
+.myPopContainer a  {
+    color: inherit !important;
+    text-decoration:  none;
+    border-bottom:  1px dotted;
+}
+
+.myPopContainer a:hover  {
+    color: #dd163b !important;
+}
+
+.myPopTitle  {
+    display:  inline-block;
+    position:  relative;
+    flex-direction:  column;
+    padding:  0px;
+    left:  17px;
+    margin-top:  14px;
+    filter:  drop-shadow(0px 0px 1px rgba(0,  0,  0,  0.3));
+}
+
+.myPopName  {
+    position:  block;
+    font-style:  normal;
+    font-weight:  bold;
+    font-size:  28px;
+    line-height:  100%;
+    color:  #4B5368;
+    order:  0;
+    margin:  2px 60px 2px 0;
+}
+
+.myPopLine  {
+    display:  inline-block;
+    position:  relative;
+    width:  312px;
+    height:  0px;
+    left:  17px;
+    margin-top:  15px;
+    border:  1px solid #E1D5BF;
+}
+
+.myPopClose  {
+    position:  absolute !important;
+    right:  20px !important;
+    top:  18px !important;
+    background:  url("../images/controls/close_btn.svg") no-repeat;
+    background-size:  contain;
+    box-sizing:  border-box !important;
+    width:  26px;
+    height:  26px;
+    cursor:  pointer;
+}
+
+.myPopComment  {
+    display:  block;
+    position:  relative;
+    margin:  14px 0 0 0;
+    padding:  0 37px 0 17px;
+    font-style:  normal;
+    font-weight:  bold;
+    font-size:  18px;
+    line-height:  100%;
+    align-items:  center;
+    color:  #4B5368;
+}
+
+.myPopCommentIsland  {
+    display:  block;
+    position:  relative;
+    margin:  24px 0 0 0;
+    padding:  0 37px 0 17px;
+    font-style:  normal;
+    font-weight:  bold;
+    font-size:  24px;
+    line-height:  100%;
+    align-items:  center;
+    color:  #4B5368;
+}
+
+.myPopPicture  {
+    position:  relative;
+    overflow:  hidden;
+    width:  312px;
+    height:  326px;
+    margin:  0 auto;
+}
+
+.myPopPictureIsland  {
+    position:  relative;
+    width:  128px;
+    height:  128px;
+    margin:  0 auto;
+}
+.myPopPictureIsland img  {
+    display:  inline-block;
+    margin-top:  14px;
+    margin-bottom:  14px;
+    width:  100%;
+    height:  100%;
+    box-sizing:  border-box;
+    border:  3px solid rgba(255,  255,  255,  1);
+    border-radius:  9px;
+}
+
+.myPopPicture img  {
+    display:  inline-block;
+    margin-top:  14px;
+    margin-bottom:  14px;
+    width:  100%;
+    box-sizing:  border-box;
+    border:  3px solid rgba(255,  255,  255,  1);
+    border-radius:  9px;
+}
+
+.myPopSpacer  {
+    position:  relative;
+    width:  311px;
+    height:  10px;
+    margin:  10px auto;
+}
+
+.tipcard  {
+    position:  absolute;
+    background:  url("../images/controls/tips.png") no-repeat;
+    background-size:  contain;
+    background-position:  center bottom;
+    width:  150px;
+    height:  46px;
+    left:  50%;
+    bottom:  -36px;
+    pointer-events:  none;
+    margin-left:  -75px;
+}
+
+.leaflet-container a.leaflet-popup-close-button  {
+    position:  absolute;
+    top:  0;
+    right:  0;
+    padding:  4px 4px 0 0;
+    border:  none;
+    text-align:  center;
+    width:  18px;
+    height:  14px;
+    font:  16px/14px Tahoma,  Verdana,  sans-serif;
+    color:  #c3c3c3;
+    text-decoration:  none;
+    font-weight:  bold;
+    background:  transparent;
+    display:  none;
+}
+
+.leaflet-popup-tip-container  {
+    top:  -3px;
+    width:  30px;
+    height:  30px;
+    margin-left:  -15px;
+    box-shadow:  0px 4px 4px rgba(0,  0,  0,  0);
+    opacity:  0;
+    pointer-events:  auto;
+}
+
+.copyButtonDiv  {
+    display:  flex;
+    align-items:  center;
+    justify-content:  center;
+    height:  50px;
+    padding-bottom:  10px;
+}
+
+.copyButton  {
+    flex:  0.5 1;
+    height:  40px;
+    overflow:  visible;
+    font-size:  1.5rem;
+    text-align:  center;
+    background-color:  #f0e9e2;
+    color:  #4B5368;
+    border-color:  #4B5368;
+    border-radius:  5px;
+}
+
+.copyButton:hover  {
+    background-color:  #d8d1cb;
+}
+
+.copyButton:active  {
+    background-color:  #c2bcb6;
+}
