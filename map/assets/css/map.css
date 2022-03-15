@@ -5,3 +5,15 @@ html,  body,  .map-wrapper,  #map  {
     margin:  0 auto;
     background-color:  #13171a;
 }
+
+/* area tooltip */
+
+.leaflet-tooltip.area-tooltip {
+	font-size: 12px;
+	color: #EBBA5B;
+    text-shadow: -1px 3px 5px #000;
+    white-space: nowrap;
+	border-style: none;
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
